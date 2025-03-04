@@ -104,7 +104,7 @@ La aplicación estará disponible en http://localhost:8000/
 
 - Django 4.2.7
 - django-environ 0.12.0
-- mysqlclient 2.2.0
+- PyMySQL 1.1.0 (conector MySQL puro Python)
 - python-dateutil 2.9.0.post0
 - requests 2.32.3
 
