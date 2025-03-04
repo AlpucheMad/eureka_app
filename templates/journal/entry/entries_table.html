@@ -1,0 +1,23 @@
+<!-- templates/journal/entry/entries_table.html -->
+{% load dict_extras %}
+{% if sorted_dates %}
+    {% for date in sorted_dates %}
+        {% for entry in grouped_entries|get_item:date %}
+            <tr data-entry-id="{{ entry.id }}">
+                <td>{{ entry.title }}</td>
+                <td>{{ entry.journal.name }}</td>
+                <td>{{ entry.entry_date|date:"h:i A" }}</td>
+                <td class="text-center">
+                    <span class="bx bx-trash text-danger" style="cursor: pointer;"></span> |
+                    <span class="favorite">
+                        <i class="bx {% if entry.favorite %}bxs-star{% else %}bx-star{% endif %} eureka-yellow" style="opacity:0.75; cursor: pointer;"></i>
+                    </span>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endfor %}
+{% else %}
+    <tr>
+        <td colspan="4" class="text-center">No se encontraron entradas.</td>
+    </tr>
+{% endif %}

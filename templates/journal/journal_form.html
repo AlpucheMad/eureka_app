@@ -1,0 +1,8 @@
+{% load static %}
+
+<form method="post" id="journalForm">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" class="form-control" id="journalName" name="name" required placeholder="Nombre del Libro..." value="{{ journal.name }}">
+    </div>
+</form>

@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="loading" lang="es-mx" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="A record of your self-being.">
+    <meta name="keywords" content="journalism">
+    <meta name="author" content="Gerardo Alpuche">
+    <title>Eureka!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'app-assets/images/ico/EUREKA-IL-WHT-PNG-CUT.png' %}">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <script src="{% static 'app-assets/vendors/js/vendors.min.js' %}"></script>
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/vendors.min.css' %}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/bootstrap-extended.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/colors.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/themes/dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/themes/semi-dark-layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/tables/datatable/datatables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/js/editors/quill2/quill.bubble.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/js/editors/quill2/quill.core.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/js/editors/quill2/quill.snow.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/vendors/css/extensions/sweetalert2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/daterangepicker.css' %}">
+
+    <script src="{% static 'app-assets/vendors/js/extensions/sweetalert2.all.min.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/Modal.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/moment.js' %}"></script>
+    <script src="{% static 'app-assets/js/scripts/SimpleAjax.js' %}"></script>
+<script src="{% static 'app-assets/js/scripts/daterangepicker.js' %}"></script>
+
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'app-assets/css/core/menu/menu-types/horizontal-menu.css' %}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Login | Header / Body / Footer-->
+    {% block content %}
+    {% endblock %}
+<!-- END: Body-->
+
+<!-- BEGIN: Vendor JS-->
+
+<script src="{% static 'app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js' %}"></script>
+<script src="{% static 'app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js' %}"></script>
+<script src="{% static 'app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js' %}"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{% static 'app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/tables/datatable/datatables.min.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/tables/datatable/buttons.html5.min.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/tables/datatable/buttons.print.min.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js' %}"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="{% static 'app-assets/js/scripts/configs/horizontal-menu.js' %}"></script>
+<script src="{% static 'app-assets/js/core/app-menu.js' %}"></script>
+<script src="{% static 'app-assets/js/core/app.js' %}"></script>
+<script src="{% static 'app-assets/js/scripts/components.js' %}"></script>
+<script src="{% static 'app-assets/js/scripts/footer.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/editors/quill2/quill.core.js' %}"></script>
+<script src="{% static 'app-assets/vendors/js/editors/quill2/quill.js' %}"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="{% static 'app-assets/js/scripts/datatables/datatable.js' %}"></script>
+<!-- END: Page JS-->
+</html>

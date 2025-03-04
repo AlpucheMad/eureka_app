@@ -1,0 +1,43 @@
+{% extends '../../base_menu.html' %}
+{% load static %}
+
+{% block content1 %}
+<ul class="nav nav-tabs nav-fill justify-content-center" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="feed-tab-center" href="{% url 'feed_view' %}" aria-controls="feed-center" role="tab" aria-selected="false">
+            <i class="bx bxs-news align-middle"></i>
+            <span class="align-middle">Inicio</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="new-tab-center" href="{% url 'new_entry_view' %}" aria-controls="new-center" role="tab" aria-selected="true">
+            <i class="bx bxs-edit align-middle"></i>
+            <span class="align-middle">Nuevo</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="entries-tab-center" href="{% url 'entries_view' %}" aria-controls="entries-center" role="tab" aria-selected="false">
+            <i class="bx bxs-data align-middle"></i>
+            <span class="align-middle">Entradas</span>
+        </a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active col-8 mx-auto" id="feed-center" aria-labelledby="entries-tab-center" role="tabpanel">
+        <div class="card">
+            <div class="card-header bg-eureka-black  d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 text-white"><b>Por qué hago esto?</b></h5>
+                <div>
+                    <a data-action="expand" class="text-white mr-2"><i class="bx bx-fullscreen"></i></a>
+                    <a data-action="archive" class="text-white"><i class="bx bx-star"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4>Sitio en construcción</h4>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

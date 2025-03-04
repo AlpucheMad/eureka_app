@@ -1,0 +1,21 @@
+<!-- templates/journal/entry/entries_filter.html -->
+{% load static %}
+<div class="row mb-1">
+    <div class="col-md-3">
+        <input type="text" id="rangoFecha" class="form-control" placeholder="Rango de fechas">
+    </div>
+    <div class="col-md-3">
+        <select id="selectJournal" class="form-control">
+            <option value="0">Todos los libros</option>
+            {% for journal in journals %}
+                <option value="{{ journal.id }}">{{ journal.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="search-text" class="form-control" placeholder="Buscar por título">
+    </div>
+    <div class="col-md-3">
+        <button id="btnEntriesFilter" class="btn btn-warning btn-block"><i class="bx bx-search"></i> Buscar</button>
+    </div>
+</div> 

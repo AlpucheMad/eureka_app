@@ -1,0 +1,31 @@
+{% extends 'base_menu.html' %}
+{% load static %}
+
+{% block content1 %}
+    
+    <!-- Nav Center Alignement Starts -->
+    <ul class="nav nav-tabs nav-fill justify-content-center" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="feed-tab-center" data-toggle="tab" href="{% url 'feed_view' %}" aria-controls="feed-center" role="tab" aria-selected="false">
+                <i class="bx bxs-news align-middle"></i>
+                <span class="align-middle">Inicio</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" id="new-tab-center" data-toggle="tab" href="{% url 'new_entry_view' %}" aria-controls="new-center" role="tab" aria-selected="true">
+                <i class="bx bxs-edit align-middle"></i>
+                <span class="align-middle">Nuevo</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="entries-tab-center" data-toggle="tab" href="{% url 'entries_view' %}" aria-controls="entries-center" role="tab" aria-selected="false">
+                <i class="bx bxs-data align-middle"></i>
+                <span class="align-middle">Entradas</span>
+            </a>
+        </li>
+    </ul>
+    {% block active_tab %}
+    {% endblock %}
+    <!-- Nav Center Alignement Ends -->
+{% endblock %}
+

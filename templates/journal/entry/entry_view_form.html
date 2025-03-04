@@ -1,0 +1,18 @@
+<!-- templates/journal/entry/entry_view_form.html -->
+{% load static %}
+<div>
+    <p><strong>Título:</strong> {{ entry.title }}</p>
+    <p><strong>Libro:</strong> {{ entry.journal.name }}</p>
+    <p><strong>Fecha y hora:</strong> {{ entry.entry_date|date:"d/m/Y h:i A" }}</p>
+    <p><strong>Contenido:</strong></p>
+    <div>{{ entry.content|safe }}</div>
+</div>
+
+<div class="text-center mt-3">
+    <button type="button" class="btn btn-danger" id="btnDeleteEntry">
+        <i class="bx bx-trash"></i> Eliminar
+    </button>
+    <button type="button" class="btn btn-warning" id="btnToggleFavorite">
+        <i class="bx {% if entry.is_favorite %}bxs-star{% else %}bx-star{% endif %}"></i> Favorito
+    </button>
+</div>

@@ -1,0 +1,65 @@
+/* styles.css */
+
+.eureka-yellow {
+    color: #f9b234;
+}
+
+.eureka-black {
+    color: #1d1d1b;
+}
+
+.bg-eureka-yellow {
+    background-color: #f9b234 !important;
+}
+
+.bg-eureka-black {
+    background-color: #1d1d1b !important;
+}
+
+.input-group-text:hover a.eureka-black {
+    color: white;
+}
+
+.input-group-text:hover {
+    color:white !important;
+    cursor: pointer;
+}
+
+a.eureka-black:hover {
+    color: #f9b234;
+}
+
+a.nav-link:not(.active) {
+    background-color: #1d1d1b !important;
+    color: white;
+}
+
+a.nav-link.active {
+    background-color: #f9b234 !important;
+    color: black !important;
+}
+
+a.nav-link:not(.active):hover {
+    color: #f9b234!important;
+}
+
+a.nav-link.active:hover {
+    color: white !important;
+}
+
+button.btn-warning {
+    color: white !important;
+}
+
+.bx-fullscreen, .bxs-archive-in, .bx-exit-fullscreen, .bx-star, .bxs-star, .bxs-right-arrow, #entriesByDateTable > tbody> tr {
+    cursor: pointer;
+}
+.fade {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+

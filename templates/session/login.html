@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- BEGIN: Body-->
+<body class="horizontal-layout horizontal-menu navbar-static light-layout bg-eureka-black 2-columns footer-static  menu-expanded pace-done" data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
+    
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper mt-5">
+            <div class="content-header row mt-5">
+            </div>
+            <div class="content-body">
+                <div class="content-body align-items-center justify-content-center mt-3">
+                    <!-- login page start -->
+                    <section id="auth-login" class="row justify-content-center mt-5">
+                        <div class="col-xl-3 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="text-center mb-1">
+                                            <a href="#">
+                                                <img class="img-fluid  mx-auto d-block" src="{% static 'app-assets/images/logo/EUREKA-CLR-PNG.png' %}">
+                                            </a>
+                                        </div>
+                                        
+                                        <!-- Mostrar mensajes -->
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert 
+                                                    {% if message.tags == 'success' %} alert-success 
+                                                    {% elif message.tags == 'error' %} alert-danger 
+                                                    {% elif message.tags == 'warning' %} alert-warning 
+                                                    {% elif message.tags == 'info' %} alert-info 
+                                                    {% endif %}" role="alert">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                        
+                                        <form class="form" method="post">
+                                            <div class="form-body">
+                                                {% csrf_token %}
+                                                {% for field in form %}
+                                                    <div class="form-group mb-1">
+                                                        {{ field }}
+
+                                                        {% if form.is_bound and field.errors %}
+                                                            <div class="text-danger">
+                                                                {{ field.errors|striptags }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                            {% if form.non_field_errors %}
+                                                <div class="alert alert-danger fade show" data-auto-close="true">
+                                                    {% for error in form.non_field_errors %}
+                                                        {{ error }}
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+
+                                            <div class="form-actions d-flex justify-content-end mt-2">
+                                                <button type="submit" class="btn btn-warning glow w-100 position-relative">
+                                                    Iniciar <i id="icon-arrow" class="bx bx-right-arrow-alt"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <hr>
+                                        <div class="text-center">
+                                            <small class="mr-25">Aún no tienes cuenta?</small>
+                                            <a class="eureka-black" href="/account/register/">
+                                                <small>Regístrate</small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- login page ends -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+</body>
+<!-- END: Body-->
+
+<script src="{% static 'app-assets/js/eureka-app/session/login.js' %}"></script>
+{% endblock %}

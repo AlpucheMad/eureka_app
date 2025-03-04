@@ -1,0 +1,27 @@
+<!-- templates/journal/journal_dropdown.html -->
+{% load static %}
+<div class="input-group col-6 mb-1">
+    <div class="input-group-prepend">
+        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bx bxs-book"></i>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item text-success journal-menu-item" id="addJournal" data-action="add"><i class="bx bxs-plus-circle mr-1 text-success"></i><b>Crear</b></a>
+            <a class="dropdown-item text-primary journal-menu-item" id="editJournal" data-action="edit"><i class="bx bxs-pencil mr-1 text-primary"></i> Editar</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item text-danger journal-menu-item" id="deleteJournal" data-action="delete"><i class="bx bxs-trash mr-1 text-danger"></i>Eliminar</a>
+        </div>
+    </div>
+    <select class="form-control" id="selectJournal" name="selectJournal">
+        <option value="0" selected>Selecciona libro...</option>
+        {% for journal in journals %}
+        <option value="{{ journal.id }}">{{ journal.name }}</option>
+        {% endfor %}
+    </select>
+</div>
+<script src="{% static 'app-assets/js/eureka-app/journal/journal_form.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        JournalForm.init();
+    });
+</script>

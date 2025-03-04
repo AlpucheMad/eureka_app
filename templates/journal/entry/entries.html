@@ -1,0 +1,64 @@
+<!-- templates/journal/entry/entries.html -->
+{% extends '../../base_menu.html' %}
+{% load static %}
+{% load dict_extras %}
+
+{% block content1 %}
+<ul class="nav nav-tabs nav-fill justify-content-center" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link" id="feed-tab-center" href="{% url 'feed_view' %}" aria-controls="feed-center" role="tab" aria-selected="false">
+            <i class="bx bxs-news align-middle"></i>
+            <span class="align-middle">Inicio</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="new-tab-center" href="{% url 'new_entry_view' %}" aria-controls="new-center" role="tab" aria-selected="false">
+            <i class="bx bxs-edit align-middle"></i>
+            <span class="align-middle">Nuevo</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" id="entries-tab-center" href="{% url 'entries_view' %}" aria-controls="entries-center" role="tab" aria-selected="true">
+            <i class="bx bxs-data align-middle"></i>
+            <span class="align-middle">Entradas</span>
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active col-8 mx-auto" id="entries-center" aria-labelledby="entries-tab-center" role="tabpanel">
+        <div class="row card">
+            <div class="card-header bg-eureka-black">
+                <h4 class="card-title text-white"><b>Entradas</b></h4>
+            </div>
+            <div class="card-body">
+                <!-- Incluir la sección de filtros -->
+                {% include 'journal/entry/entries_filter.html' %}
+
+                <div class="table-responsive">
+                    <table class="table nowrap text-center" id="entriesTable">
+                        <thead class="bg-eureka-black text-white">
+                            <tr>
+                                <th class="text-white">Título</th>
+                                <th class="text-white">Libro</th>
+                                <th class="text-white">Hora</th>
+                                <th class="text-white">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% include 'journal/entry/entries_table.html' %} 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'app-assets/js/eureka-app/journal/entry/entries.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        Entries.init();
+    });
+</script>
+{% endblock %}
